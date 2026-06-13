@@ -6,6 +6,7 @@
 # Dependencies / build
 node_modules/
 dist/
+out/
 *.tsbuildinfo
 
 # Local scratch + generated assets
