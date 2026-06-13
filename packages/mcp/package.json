@@ -1,0 +1,15 @@
+{
+  "name": "@pixellabrat/mcp",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "pixellabrat-mcp": "./src/server.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@pixellabrat/core": "workspace:*",
+    "@pixellabrat/store": "workspace:*",
+    "zod": "^3.24.0"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "pixellabrat",
+  "description": "Local, project-based desktop app and MCP server for generating style-consistent pixel art with the PixelLab API, driven by Claude.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "gen:api": "openapi-typescript ./API.json -o ./packages/core/src/generated/api.d.ts",
+    "typecheck": "tsc --noEmit",
+    "smoke": "bun run packages/core/scripts/smoke.ts",
+    "mcp": "bun run packages/mcp/src/server.ts",
+    "store:check": "bun run packages/store/scripts/check.ts",
+    "mcp:check": "bun run packages/mcp/scripts/check.ts",
+    "agent:check": "bun run packages/agent/scripts/check.ts",
+    "app:dev": "cd packages/app && bun run dev",
+    "app:build": "cd packages/app && bun run build",
+    "app:seed": "bun run packages/app/scripts/seed-demo.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.0",
+    "@types/node": "^22.0.0",
+    "openapi-typescript": "^7.5.0",
+    "typescript": "^5.7.0"
+  },
+  "trustedDependencies": ["electron", "esbuild"]
+}

@@ -1,0 +1,20 @@
+# Secrets — NEVER commit
+.env
+.env.*
+!.env.example
+
+# Dependencies / build
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Local scratch + generated assets
+tmp/
+projects/
+
+# OS / editor
+.DS_Store
+*.log
+
+# Generated API docs
+API.json

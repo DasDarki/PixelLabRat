@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ESNext"],
+    "types": ["bun", "node"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "packages/core/src/**/*",
+    "packages/core/scripts/**/*",
+    "packages/store/src/**/*",
+    "packages/store/scripts/**/*",
+    "packages/mcp/src/**/*",
+    "packages/mcp/scripts/**/*",
+    "packages/agent/src/**/*",
+    "packages/agent/scripts/**/*"
+  ]
+}
