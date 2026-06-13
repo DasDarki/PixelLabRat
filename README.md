@@ -50,8 +50,11 @@ game.
 ```bash
 bun install
 cp .env.example .env     # put your PixelLab token in API_KEY
-bun run gen:api          # generate the typed v2 client from API.json
 ```
+
+The generated PixelLab client is checked in, so that's all you need. (`bun run
+gen:api` regenerates it from `API.json` and is only relevant if you're updating
+the vendored API spec.)
 
 Then run the desktop app:
 
@@ -89,6 +92,14 @@ The subscription path goes through the Claude Agent SDK and is meant for persona
 use — don't ship a multi-user app on a single subscription token.
 
 ## Using it from Claude Code (MCP)
+
+You can make art entirely from a Claude Code conversation — there's a full
+walkthrough in **[docs/using-with-claude-code.md](docs/using-with-claude-code.md)**,
+an [art-brief template](docs/art-brief-template.md) for bootstrapping a project,
+and two skills under [`.claude/skills/`](.claude/skills/): `pixel-art` (the
+generation workflow) and `pixel-cleanup` (find and remove stray edge artifacts
+from a sprite with ImageMagick). Copy them to `~/.claude/skills/` to use them from
+any repo.
 
 The repo ships a `.mcp.json`, so Claude Code picks up the `pixellabrat` server
 automatically when started from the project directory. To register it manually:
